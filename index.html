@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Tutor-Connect Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    
+        <nav>
+            <img src="Logo.jpg" alt="Campus Tutoring Hub Logo" width="150" >
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="tutors.html">Find a Tutor</a></li>
+                <li><a href="bookings.html">My Bookings</a></li>
+                <li><a href="tutor-profile.html">Tutor's Blog</a></li>
+                <li><a href="#video">Intro Video</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section  class="image-container">
+        <div>
+            <img src="pic1.jpg" alt="Tutoring" class="body-image">
+        </div>
+    </section>
+    <section class="hero">
+        <h1 class="campus">Campus Tutor-Connect</h1>
+        <h1>Connect with the Best Tutors on Campus.</h1>
+        Find expert Tutors in various courses or become a Tutor,
+           <p> earn while helping Students.</p>
+        
+        <a href="signup.html" class="btn">Get Started</a>
+    </section>
+    
+<br>
+<br>
+<br>
+
+
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1. Sign Up</h3>
+                <p> As a student.</p>
+            </div>
+            <div class="step">
+                <h3>2. Sign up</h3>
+                <p> As a Tutor</p>
+            </div>
+            <!--Student Registration/Sign up will be redirected from here too-->
+            <div class="step">
+                <h3>3. Click here to subscribe</h3>
+                <p>Book sessions, Connect, learn & grow.</p>
+            </div>
+    </section>
+<br>
+<br>
+<br>
+<section id="faq" class="faq">
+<h2>    Frequently Asked Questions</h2>
+<div class="faq-item">
+    <h3>How do I become a tutor?</h3>
+    <p>Simply Sign up, complete your profile, and apply as a tutor. Our team will verify your credentials before approval.</p>
+</div>
+
+<div class="faq-item">
+    <h3>Is the platform free to use?</h3>
+    <p>Yes! Students can access free tutoring sessions. However, premium tutors offer paid sessions for deeper learning.</p>
+</div>
+<div class="faq-item">
+    <h3>How do i book a tutoring session?</h3>
+    <p>Go to the 'Find a Tutor' page, select a tutor, and choose a time slot that works for you.</p>
+</div>
+<div class="faq-item">
+    <h3>Can I cancel or reschedule my session?</h3>
+    <p>Yes, you can manage your bookings in the 'My Bookings' section.</p>
+</div>
+<!--Contact form-->
+</section>
+<section id="contact" class="contact">
+    <div class="container">
+    <h2>Contact Us</h2>
+    <p>Have questions? Reach out to us and we'll get back to you as soon as possible.</p>
+
+    <form onsubmit="redirectToThankYou(); return false;">
+        <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+        <textarea name="message" placeholder="Your message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+    <script>
+        function redirectToThankYou() {
+            window.location.href ="thank-you.html";
+        }
+    </script>
+</section>
+        <footer>
+       <marquee direction="alternate" behavior="alternate"> <p>&copy; 2025 Campus Tutoring Platform. All rights reserved.</p></marquee>
+    </footer>
+    <script>
+        function redirectToThankYou() {
+            window.location.href = "thank-you.html";
+            return false;
+        }
+    </script>
+</body>
+</html>

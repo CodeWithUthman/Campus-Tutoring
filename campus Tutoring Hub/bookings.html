@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings | Campus Tutoring Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h2>Campus Tutoring Platform</h2>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Home</a></li>
+                <li><a href="tutors.html">Find Tutors</a></li>
+                <li><a href="bookings.html">My Bookings</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>My Bookings</h2>
+        <div id="bookings-list">
+            <!-- Booked sessions will be displayed here -->
+        </div>
+    </section>
+
+    <script>
+    function loadBookings() {
+        let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+        let bookingsList = document.getElementById("bookings-list");
+        bookingsList.innerHTML = "";
+
+        if (bookings.length === 0) {
+            bookingsList.innerHTML = "<p>No bookings yet.</p>";
+            return;
+        }
+
+        bookings.forEach((booking, index) => {
+            let bookingCard = document.createElement("div");
+            bookingCard.className = "booking-card";
+            bookingCard.innerHTML = `
+                <h3>${booking.name}</h3>
+                <p>Type: ${booking.type}</p>
+                <button onclick="cancelBooking(${index})">Cancel</button>
+            `;
+            bookingsList.appendChild(bookingCard);
+        });
+    }
+
+    function cancelBooking(index) {
+        let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+        bookings.splice(index, 1);
+        localStorage.setItem("bookings", JSON.stringify(bookings));
+        loadBookings();
+    }
+
+    loadBookings();
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Campus Tutoring Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h2>Campus Tutoring Platform</h2>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Home</a></li>
+                <li><a href="tutors.html">Find Tutors</a></li>
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="welcome-section">
+        <h2>Welcome, <span id="user-name"></span></h2>
+        <p>Find the best tutors on campus to help you succeed.</p>
+        <a href="tutors.html" class="btn">Find Tutors</a>
+    </section>
+<!-- About the Platform Section -->
+<section class="about-section">
+    <h2>About Campus Tutoring Platform</h2>
+    <p>We connect students with experienced tutors on campus. Whether you need help with a subject or want to offer tutoring, our platform makes it easy.</p>
+    <ul>
+        <li>📚 Find subject-specific tutors</li>
+        <li>🎓 Choose between free and VIP sessions</li>
+        <li>🔍 Filter tutors by gender</li>
+        <li>💳 Secure VIP booking system</li>
+    </ul>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <h2>What Students Say</h2>
+    <div class="testimonial">
+        
+        <p>"This platform helped me pass my calculus exam! The tutors are amazing." - Yusuf Husseini
+            <img src="yusstyle.jpg" alt="yusstyle">
+        </p>
+    </div>
+    <div class="testimonial">
+        <img src="pic1.jpg" alt="Student 2">
+        <p>"I was struggling with programming, but now I feel confident!" - Emmanuella Adams</p>
+    </div>
+    <div class="testimonial">
+        <img src="pic2.jpg" alt="Student 3">
+        <p>"The VIP sessions are worth every penny. Highly recommended!" - Sir Dennis</p>
+    </div>
+</section>
+    <script>
+        // Redirect to login if not authenticated
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+
+        // Display logged-in user's email as name (for now)
+        document.getElementById("user-name").innerText = localStorage.getItem("userEmail");
+
+        // Logout functionality
+        document.getElementById("logout").addEventListener("click", function() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+        });
+    </script>
+    <!-- Footer -->
+<footer>
+    <marquee direction="alternate" behavior="alternate">
+        <p>&copy; 2025 Campus Tutoring Platform. All rights reserved.</p>
+    </marquee>
+</footer>
+</body>
+</html>
